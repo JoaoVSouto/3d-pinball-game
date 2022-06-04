@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
-  public float ballStrength;
-
-  private Vector3 oldPosition;
 
   Rigidbody rb;
 
@@ -15,19 +12,8 @@ public class Ball : MonoBehaviour
     rb = GetComponent<Rigidbody>();
   }
 
-  void Update()
+  public void AddForce(float strength)
   {
-    if (Input.GetKeyDown(KeyCode.Space))
-    {
-      rb.AddForce(new Vector3(0, 0, ballStrength));
-    }
-  }
-
-  public float GetSpeed()
-  {
-    float speed = Vector3.Distance(oldPosition, transform.position);
-    oldPosition = transform.position;
-
-    return speed;
+    rb.AddForce(new Vector3(0, 0, strength));
   }
 }

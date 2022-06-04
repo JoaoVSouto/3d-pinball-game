@@ -640,7 +640,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d063a37a8719e2298b9b65d4035d595, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ballStrength: 0
 --- !u!1 &335582144
 GameObject:
   m_ObjectHideFlags: 0
@@ -3099,6 +3098,7 @@ GameObject:
   - component: {fileID: 1268218855}
   - component: {fileID: 1268218854}
   - component: {fileID: 1268218853}
+  - component: {fileID: 1268218856}
   m_Layer: 0
   m_Name: Spring
   m_TagString: Untagged
@@ -3114,8 +3114,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1268218851}
   m_LocalRotation: {x: -0.09920693, y: 0, z: 0, w: 0.9950668}
-  m_LocalPosition: {x: 0.4769, y: -0.3704, z: 0.028}
-  m_LocalScale: {x: 0.05776687, y: 0.051322293, z: 0.07584207}
+  m_LocalPosition: {x: 0.4769, y: -0.3703, z: 0.0284}
+  m_LocalScale: {x: 0.05776687, y: 0.051322293, z: 0.09689583}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1663016364}
@@ -3184,6 +3184,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1268218851}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1268218856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1268218851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd65b024d6e3345b69b37539e176dc58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  springStretchLimit: 180
+  stretchForce: 0.0005
+  ballForceDivider: 0.6
 --- !u!1 &1308752480
 GameObject:
   m_ObjectHideFlags: 0
@@ -4328,7 +4343,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1718796433}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.541, y: 0.782, z: -5.396}
+  m_LocalPosition: {x: 0.541, y: 0.7783, z: -5.4038}
   m_LocalScale: {x: 0.04617046, y: 0.04617046, z: 0.04617046}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4363,7 +4378,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d063a37a8719e2298b9b65d4035d595, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ballStrength: 175
 --- !u!1 &1897177135
 GameObject:
   m_ObjectHideFlags: 0
