@@ -46,4 +46,10 @@ public class Ball : MonoBehaviour
   {
     rb.velocity *= strength;
   }
+
+  public void PullByTangent(float strength)
+  {
+    rb.velocity = Vector3.Reflect(rb.velocity, transform.forward);
+    rb.velocity *= strength;
+  }
 }
