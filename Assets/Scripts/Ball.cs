@@ -4,18 +4,30 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
-    Rigidbody rb;
-    void Start()
-    {
-        rb = GetComponent<Rigidbody>();
-    }
+  public float ballStrength;
 
-    // Update is called once per frame
-    void Update()
+  private Vector3 oldPosition;
+
+  Rigidbody rb;
+
+  void Start()
+  {
+    rb = GetComponent<Rigidbody>();
+  }
+
+  void Update()
+  {
+    if (Input.GetKeyDown(KeyCode.Space))
     {
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            rb.AddForce(new Vector3(0, 0, 50));
-        }
+      rb.AddForce(new Vector3(0, 0, ballStrength));
     }
+  }
+
+  public float GetSpeed()
+  {
+    float speed = Vector3.Distance(oldPosition, transform.position);
+    oldPosition = transform.position;
+
+    return speed;
+  }
 }
