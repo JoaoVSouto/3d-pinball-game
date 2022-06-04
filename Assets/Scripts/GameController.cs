@@ -47,6 +47,7 @@ public class GameController : MonoBehaviour
       hudScreen.SetActive(false);
       gameOverScreen.SetActive(true);
       gameOverScoreText.text = scoreText.text;
+      Time.timeScale = 0f;
     }
   }
 
@@ -60,5 +61,7 @@ public class GameController : MonoBehaviour
 
     hudScreen.SetActive(true);
     gameOverScreen.SetActive(false);
+
+    Time.timeScale = 1f;
   }
 }
