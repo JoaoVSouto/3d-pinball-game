@@ -7,6 +7,7 @@ public class Spring : MonoBehaviour
   public int springStretchLimit;
   public float stretchForce;
   public float ballForceDivider;
+  public float resetSpringTime;
   int springCurrentStretch = 0;
   Vector3 initialScale;
   Vector3 initialPosition;
@@ -54,7 +55,7 @@ public class Spring : MonoBehaviour
 
   IEnumerator ResetSpring()
   {
-    yield return new WaitForSeconds(0.01f);
+    yield return new WaitForSeconds(resetSpringTime);
     transform.localScale = initialScale;
     transform.position = initialPosition;
   }

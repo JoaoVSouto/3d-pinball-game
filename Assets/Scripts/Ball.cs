@@ -16,4 +16,9 @@ public class Ball : MonoBehaviour
   {
     rb.AddForce(new Vector3(0, 0, strength));
   }
+
+  public void Pull(float strength)
+  {
+    rb.velocity *= strength;
+  }
 }
