@@ -38,6 +38,7 @@ public class Ball : MonoBehaviour
 
   public void AddForce(float strength)
   {
+    rb = GetComponent<Rigidbody>();
     rb.AddForce(new Vector3(0, 0, strength));
   }
 

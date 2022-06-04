@@ -8,6 +8,7 @@ public class Spring : MonoBehaviour
   public float stretchForce;
   public float ballForceDivider;
   public float resetSpringTime;
+  public GameObject gameController;
   int springCurrentStretch = 0;
   Vector3 initialScale;
   Vector3 initialPosition;
@@ -44,7 +45,7 @@ public class Spring : MonoBehaviour
     {
       if (isTouchingBall)
       {
-        GameObject.FindGameObjectWithTag("Ball").GetComponent<Ball>().AddForce((float)springCurrentStretch / ballForceDivider);
+        gameController.GetComponent<GameController>().ball.GetComponent<Ball>().AddForce((float)springCurrentStretch / ballForceDivider);
       }
 
       springCurrentStretch = 0;
@@ -62,11 +63,17 @@ public class Spring : MonoBehaviour
 
   private void OnCollisionEnter(Collision collision)
   {
-    isTouchingBall = true;
+    if (collision.gameObject.tag == "Ball")
+    {
+      isTouchingBall = true;
+    }
   }
 
   private void OnCollisionExit(Collision collision)
   {
-    isTouchingBall = false;
+    if (collision.gameObject.tag == "Ball")
+    {
+      isTouchingBall = false;
+    }
   }
 }
