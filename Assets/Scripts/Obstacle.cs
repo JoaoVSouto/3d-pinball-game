@@ -5,24 +5,19 @@ using UnityEngine;
 public class Obstacle : MonoBehaviour
 {
 
-    public GameObject gameController;
-    public enum Type { Green, Yellow, Pink, Blue };
-    public Type type;
+  public GameObject gameController;
+  public enum Type
+  {
+    Green, Yellow, Pink, Blue
+  };
+  public Type type;
 
-    void Start()
+  void OnCollisionEnter(Collision other)
+  {
+    if (other.gameObject.tag == "Ball")
     {
-        
+      gameController.GetComponent<GameController>().IncreaseScore(1);
+      other.gameObject.GetComponent<Ball>().Pull(1.2f);
     }
-
-    void Update()
-    {
-        
-    }
-
-    void OnCollisionEnter(Collision other) {
-        if (other.gameObject.tag == "Ball") {
-            gameController.GetComponent<GameController>().IncreaseScore(1);
-            other.gameObject.GetComponent<Ball>().Pull(1000f);
-        }    
-    }
+  }
 }
