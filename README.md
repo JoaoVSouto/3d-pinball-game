@@ -1,6 +1,6 @@
 # 3D Exotic Pinball Game 🕹️
 
-Se divirta com o pinball exótico! Made with Unity.
+Se divirta com o pinball exótico! Feito com [Unity](https://unity.com/).
 
 ## Componentes
 
